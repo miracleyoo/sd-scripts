@@ -1,0 +1,5 @@
+church, cars, pedestrian, crossing, noon, fler --n car ego hood, dashcam view --w 384 --h 320 --d 2333 --l 7.5 --s 30
+
+road, trees, street, sky, clouds, streetlight, foliage, night, fler --n car ego hood, dashcam view --w 384 --h 320 --d 2333 --l 7.5 --s 30
+
+car, coconut tree, beach, noon, fler --n car ego hood, dashcam view --w 384 --h 320 --d 2333 --l 7.5 --s 30
