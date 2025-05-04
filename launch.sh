@@ -2,12 +2,13 @@
 accelerate launch --num_cpu_threads_per_process 1 --num_processes 1 --num_machines 1 --mixed_precision=fp16 --dynamo_backend=inductor train_network.py \
     --pretrained_model_name_or_path=/fastdata/sd-models/sd21-unclip-h.ckpt \
     --dataset_config=./datasets/fler.toml \
-    --output_dir=/fastdata/lora-outputs \
-    --output_name=basic_fler \
+    --output_dir=/fastdata/lora-outputs/blended_fler \
+    --output_name=blended_fler \
     --save_model_as=safetensors \
     --prior_loss_weight=1.0 \
-    --max_train_steps=400 \
     --learning_rate=1e-4 \
+    --unet_lr=1e-4 \
+    --text_encoder_lr=1e-5 \
     --lr_scheduler=cosine_with_restarts \
     --optimizer_type=AdamW8bit \
     --xformers \
@@ -15,12 +16,15 @@ accelerate launch --num_cpu_threads_per_process 1 --num_processes 1 --num_machin
     --gradient_checkpointing \
     --save_every_n_epochs=1 \
     --save_state \
+    --save_precision=float \
     --network_module=networks.lora \
+    --no_half_vae \
     --v2 \
     --v_parameterization \
     --scale_v_pred_loss_like_noise_pred \
     --sample_prompts=./fler_resources/prompts.txt \
     --sample_sampler=euler_a \
+    --mixed_precision=fp16 \
     --sample_every_n_epochs=1 \
-    --mixed_precision=fp16
-
+    --max_train_epochs=20 \
+    --resolution="384, 320" 
