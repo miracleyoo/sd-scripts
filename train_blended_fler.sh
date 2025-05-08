@@ -1,7 +1,7 @@
 #! /bin/bash
 accelerate launch --num_cpu_threads_per_process 1 --num_processes 1 --num_machines 1 --mixed_precision=fp16 --dynamo_backend=inductor train_network.py \
     --pretrained_model_name_or_path=/fastdata/sd-models/sd21-unclip-h.ckpt \
-    --dataset_config=./datasets/fler.toml \
+    --dataset_config=./datasets/blended_fler.toml \
     --output_dir=/fastdata/lora-outputs/blended_fler \
     --output_name=blended_fler \
     --save_model_as=safetensors \
