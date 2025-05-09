@@ -7,8 +7,8 @@ accelerate launch --num_cpu_threads_per_process 1 --num_processes 1 --num_machin
     --save_model_as=safetensors \
     --prior_loss_weight=1.0 \
     --network_train_unet_only \
-    --unet_lr=0 \
-    --text_encoder_lr=1e-5 \
+    --unet_lr=1e-4 \
+    --text_encoder_lr=0 \
     --lr_scheduler=cosine_with_restarts \
     --optimizer_type=AdamW8bit \
     --xformers \
