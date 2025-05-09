@@ -6,6 +6,6 @@ resolution = [384, 320]                            # 训练分辨率
 batch_size = 8                              # 批次大小
 
   [[datasets.subsets]]
-  image_dir = '/fastdata/sd-data/fler_guide_mini/blended_fler'                     # 指定包含训练图像的文件夹
+  image_dir = '/fastdata/sd-data/fler_guide/blended_fler'                     # 指定包含训练图像的文件夹
   caption_extension = '.txt'            # 若使用txt文件,更改此项
   num_repeats = 1                       # 训练图像的重复次数
