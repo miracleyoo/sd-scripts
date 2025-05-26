@@ -213,11 +213,12 @@ dataset_klass = DreamBoothDataset
 
 # Dataset in use:
 
-DreamBoothDataset
+library.train_util.DreamBoothDataset
+getitem: https://vscode.dev/github/miracleyoo/sd-scripts/blob/image_imu/library/train_util.py#L1226
 
 # Subset in use:
 
-DreamBoothSubset
+library.train_util.DreamBoothSubset
 
 # Subset params in use:
 

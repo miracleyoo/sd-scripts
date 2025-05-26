@@ -164,6 +164,15 @@ class ImageInfo:
         self.text_encoder_outputs2: Optional[torch.Tensor] = None
         self.text_encoder_pool2: Optional[torch.Tensor] = None
         self.alpha_mask: Optional[torch.Tensor] = None  # alpha mask can be flipped in runtime
+        
+        # IMU data and Original RGB Image (for IMU training)
+        self.imu: torch.Tensor = None
+        self.rgb_image: Optional[Image.Image] = None
+        self.rgb_latents: torch.Tensor = None
+        self.rgb_latents_flipped: torch.Tensor = None
+        self.rgb_latents_npz: str = None
+        self.rgb_latents_original_size: Tuple[int, int] = None  # original image size, not latents size
+        self.rgb_latents_crop_ltrb: Tuple[int, int] = None  # crop left top right bottom in original pixel size, not latents size
 
 
 class BucketManager:
